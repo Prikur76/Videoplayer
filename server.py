@@ -6,5 +6,5 @@ def rebuild():
 
 
 server = Server()
-server.watch('dist/templates/*.html', rebuild())
-server.serve(root='.', default_filename='dist/templates/index.html')
+server.watch('src/*.html', rebuild())
+server.serve(root='.', default_filename='src/index.html')
