@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="icon" type="image/x-icon" href="../dist/static/images/favicon.ico" />
+	<link rel="stylesheet" href="../dist/static/css/font-awesome.min.css" type="text/css">
+	<title>Video Player</title>
+  <meta charset="utf-8">
+	<style>
+		.player {
+			width: 800px;
+			height: 600px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+			display: flex;
+  		flex-direction: column;
+		}
+
+		.video-container {
+			flex-grow: 1;
+		}
+
+		.button-group {
+			background-color: #000000;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.player-time-line {
+			flex-grow: 1;
+		}
+
+		.player-button {
+			background-color: #000000;
+			border: none;
+			border-style: hidden;
+			cursor: pointer;
+			color: white;
+			font-size: 15px;
+			padding: 10px;
+		}
+
+	</style>
+</head>
+<body>
+  <div id="player" class ="player">
+    <div class="js-video-container video-container"></div>
+
+		<div class="button-group">
+			<button class="js-play-button player-button" id="play">
+				<i class="fa fa-play" aria-hidden="true"></i>
+			</button>
+
+			<button class="js-pause-button player-button" id="pause">
+				<i class="fa fa-pause" aria-hidden="true" style="margin-right: -1px"></i>
+			</button>
+
+			<button class="js-volume-button player-button" id="volume">
+				<i class="fa fa-volume-up" aria-hidden="true"></i>
+			</button>
+
+			<button class="js-mute-button  player-button" id="mute">
+				<i class="fa fa-volume-off" aria-hidden="true" style="margin-right: 7px"></i>
+			</button>
+
+			<div class="player-button player-time-line"></div>
+
+			<button class="js-fullscreen-button player-button">
+				<i class="fa fa-expand" aria-hidden="true"></i>
+			</button>
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
+  <script src="../dist/static/js/player.js"></script>
+
+  <script type="text/javascript">
+    createPlayer({
+      elementId: 'player',
+      src: '../dist/highest_peak.mp4',
+    });
+  </script>
+</body>
+</html>
