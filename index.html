@@ -3,15 +3,19 @@
 <head>
 	<link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
 	<link rel="stylesheet" href="static/css/font-awesome.min.css" type="text/css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	<title>Video Player</title>
   <meta charset="utf-8">
 	<style>
 		.player {
 			width: 727px;
 			height: 546px;
-			box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+			box-shadow: 0 0 30px rgba(0, 0, 0, 1);
 			display: flex;
   		flex-direction: column;
+  		font-family: 'Roboto', sans-serif;
 		}
 
 		.video-container {
@@ -25,10 +29,6 @@
 			justify-content: space-between;
 			align-items: center;
 		}
-		.player-time-line {
-			flex-grow: 1;
-		}
-
 		.player-button {
 			background-color: #000000;
 			border: none;
@@ -37,6 +37,39 @@
 			color: white;
 			font-size: 1rem;
 			padding: 10px;
+		}
+
+		.player-time-line {
+			flex-grow: 1;
+			color: white;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+		}
+
+		.player-progress{
+			background-color: #f8104d;
+			flex-grow: 1;
+			height: 3px;
+		}
+
+		.player-current-time{
+		  font-size: 0.92rem;
+			margin-left: -10px;
+			margin-right: 10px;
+		}
+
+		.progress-slider{
+			background-color: #f8104d;
+
+		}
+
+		.player-duration{
+			font-size: 0.92rem;
+			margin-left: 10px;
+			margin-right: -11px;
 		}
 
 	</style>
@@ -62,13 +95,19 @@
 				<i class="fa fa-volume-off" aria-hidden="true" style="margin-right: 7px"></i>
 			</button>
 
-			<div class="player-button player-time-line"></div>
+			<div class="player-button player-time-line">
+				<div class="js-current-time player-current-time"></div>
+				<div class="js-progress player-progress">
+					<div class="js-progress-slider progress-slider"></div>
+				</div>
+				<div class="js-duration player-duration"></div>
+			</div>
 
 			<button class="js-fullscreen-button player-button">
 				<i class="fa fa-expand" aria-hidden="true"></i>
 			</button>
+		</div>
 
-    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
