@@ -1,0 +1,81 @@
+
+.player {
+    font-family: 'Roboto', sans-serif;
+    width: 800px;
+    height: 600px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 5px;
+}
+
+.video-container {
+    flex-grow: 1;
+}
+
+.button-group {
+    background-color: black;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3px;
+}
+
+.player-button {
+    border: none;
+    border-style: hidden;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    font-size: 1.1em;
+    padding: 10px 10px 10px 11px;
+}
+
+.progress-bar-wrapper {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: white;
+    display: flex;
+}
+
+.current-time {
+    margin-left: -3px;
+}
+
+.duration {
+    margin-right: -3px;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.progress {
+    cursor: pointer;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.progress-slider {
+    background-color: red;
+    height: 4.7px;
+    border-radius: 1.5px;
+}
+
+.slider-dot {
+    height: 7px;
+    width: 7px;
+    background-color: red;
+    border-color: white;
+    border: 3px solid white;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: -6px;
+}
