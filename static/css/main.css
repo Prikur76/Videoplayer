@@ -34,6 +34,10 @@
     padding: 10px 10px 10px 11px;
 }
 
+.player-button:focus {
+    outline: none;
+}
+
 .progress-bar-wrapper {
     flex-grow: 1;
     font-size: 1rem;
